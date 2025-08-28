@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
@@ -22,7 +25,7 @@ class Book extends Model
 
     public function getPriceInEuros(): string
     {
-        $exchangeRate = 25; // Example exchange rate
+        $exchangeRate = 0.041; // Example exchange rate
         $priceInEuros = $this->price * $exchangeRate;
         return number_format($priceInEuros, 2) . ' €';
     }

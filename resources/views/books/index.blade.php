@@ -75,6 +75,7 @@
                         </div>
                         <div class="text-sm font-semibold tabular-nums">
                             {{ number_format($book->price, 0, ',', ' ') }} Kč
+                            <span class="text-xs">({{ $book->getPriceInEuros() }})</span>
                         </div>
                     </div>
                 </div>
